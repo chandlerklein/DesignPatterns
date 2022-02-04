@@ -6,4 +6,9 @@ public class NoOpCommand implements Command {
     public void execute() {
         // do nothing
     }
+
+    @Override
+    public void undo() {
+        // do nothing
+    }
 }
