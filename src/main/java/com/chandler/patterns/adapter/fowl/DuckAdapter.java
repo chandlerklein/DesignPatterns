@@ -1,4 +1,4 @@
-package com.chandler.patterns.adapter;
+package com.chandler.patterns.adapter.fowl;
 
 public class DuckAdapter implements Turkey {
     Duck duck;
