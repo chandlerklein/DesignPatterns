@@ -3,8 +3,9 @@ package com.chandler.patterns.observer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DamagePublisher implements Subject {
+import static com.chandler.patterns.observer.DamagePublisherBuilder.damagePublisher;
 
+public class DamagePublisher implements Subject {
     private final List<Observer> observers;
     private String waterDamage;
     private String fireDamage;
@@ -12,6 +13,10 @@ public class DamagePublisher implements Subject {
 
     public DamagePublisher() {
         this.observers = new ArrayList<>();
+        damagePublisher()
+                .fireDamage("12345")
+                .structuralDamage("345")
+                .build();
     }
 
     @Override
@@ -41,5 +46,21 @@ public class DamagePublisher implements Subject {
 
     public String getStructuralDamage() {
         return structuralDamage;
+    }
+
+    public List<Observer> getObservers() {
+        return observers;
+    }
+
+    public void setWaterDamage(String waterDamage) {
+        this.waterDamage = waterDamage;
+    }
+
+    public void setFireDamage(String fireDamage) {
+        this.fireDamage = fireDamage;
+    }
+
+    public void setStructuralDamage(String structuralDamage) {
+        this.structuralDamage = structuralDamage;
     }
 }

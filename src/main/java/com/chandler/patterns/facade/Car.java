@@ -9,8 +9,8 @@ public class Car {
 
     public void start(Key key) {
         var doors = new Doors();
-        boolean authorized = key.turns();
-        if (authorized) {
+        boolean isAuthorized = key.turns();
+        if (isAuthorized) {
             engine.start();
             updateDashboardDisplay();
             doors.lock();
